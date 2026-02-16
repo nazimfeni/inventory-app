@@ -1,36 +1,67 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
+import Card from "@/components/Card";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
-	<main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8">
-  	<h1 className="text-4xl font-bold text-gray-800 mb-4">
-    	Inventory App - Home
-  	</h1>
-  	<p className="text-lg text-gray-600 mb-6">
-    	Welcome! Choose a section to start working with your inventory.
-  	</p>
+    <main className="min-h-screen p-8 bg-gray-50">
+      <PageHeader
+        title="Inventory App - Home"
+        subtitle="Welcome! Choose a section to start working with your inventory."
+        actions={
+          <>
+            <Link href="/dashboard">
+              <Button variant="primary" size="sm">
+                Go to Dashboard
+              </Button>
+            </Link>
+          </>
+        }
+      />
 
-  	<div className="flex flex-wrap gap-4">
-    	<Link
-      	href="/dashboard"
-      	className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
-    	>
-      	Go to Dashboard
-    	</Link>
-    	<Link
-      	href="/products"
-      	className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700"
-    	>
-      	Manage Products
-    	</Link>
-    	<Link
-      	href="/suppliers"
-      	className="px-4 py-2 rounded bg-purple-600 text-white hover:bg-purple-700"
-    	>
-      	Manage Suppliers
-    	</Link>
-  	</div>
-	</main>
+      <div className="grid gap-4 md:grid-cols-3">
+        <Card>
+          <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            Dashboard
+          </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            Overview of stock levels, low inventory alerts, and quick stats.
+          </p>
+          <Link href="/dashboard">
+            <Button variant="secondary" size="sm">
+              View Dashboard
+            </Button>
+          </Link>
+        </Card>
+
+        <Card>
+          <h2 className="text-lg font-semibold text-gray-800 mb-2">Products</h2>
+          <p className="text-sm text-gray-600 mb-3">
+            Manage your products, quantities, and pricing.
+          </p>
+          <Link href="/products">
+            <Button variant="secondary" size="sm">
+              Manage Products
+            </Button>
+          </Link>
+        </Card>
+
+        <Card>
+          <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            Suppliers
+          </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            Keep track of supplier contacts and relationships.
+          </p>
+          <Link href="/suppliers">
+            <Button variant="secondary" size="sm">
+              View Suppliers
+            </Button>
+          </Link>
+        </Card>
+
+      </div>
+    </main>
   );
 }
-
