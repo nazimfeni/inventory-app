@@ -1,25 +1,36 @@
-import WelcomeCard from "@/components/WelcomeCard";
+import Link from "next/link";
 
 export default function Home() {
-return (
-  
-<main className="min-h-screen flex flex-col items-center justify-center bg-blue-50 p-8">
-<h1 className="text-4xl font-bold text-amber-900 mb-4">
-Inventory App - Day 1 By Nazim Uddin
-</h1>
-<WelcomeCard />
+  return (
+	<main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8">
+  	<h1 className="text-4xl font-bold text-gray-800 mb-4">
+    	Inventory App - Home
+  	</h1>
+  	<p className="text-lg text-gray-600 mb-6">
+    	Welcome! Choose a section to start working with your inventory.
+  	</p>
 
-
-<p className="text-lg text-gray-600">
-Next.js 30-Day Challenge Started Successfully!
-</p>
-
-<div className="mt-6 p-4 bg-white shadow rounded">
-<p className="text-gray-700">
-Today we set up the project and understood the app folder structure.
-</p>
-</div>
-</main>
-);
+  	<div className="flex flex-wrap gap-4">
+    	<Link
+      	href="/dashboard"
+      	className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+    	>
+      	Go to Dashboard
+    	</Link>
+    	<Link
+      	href="/products"
+      	className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700"
+    	>
+      	Manage Products
+    	</Link>
+    	<Link
+      	href="/suppliers"
+      	className="px-4 py-2 rounded bg-purple-600 text-white hover:bg-purple-700"
+    	>
+      	Manage Suppliers
+    	</Link>
+  	</div>
+	</main>
+  );
 }
 
