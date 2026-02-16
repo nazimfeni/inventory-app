@@ -5,6 +5,8 @@ import Button from "@/components/Button";
 
 export default function Home() {
   return (
+	<div className="space-y-4">
+
     <main className="min-h-screen p-8 bg-gray-50">
       <PageHeader
         title="Inventory App - Home"
@@ -63,5 +65,6 @@ export default function Home() {
 
       </div>
     </main>
+	</div>
   );
 }
